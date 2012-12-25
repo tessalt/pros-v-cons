@@ -1,0 +1,8 @@
+h1 Create a new list
+
+= form_for @list do |f|
+  = f.text_field :name
+  = f.submit "Create List"
+
+- List.all.each do |list|
+  = link_to list.name, list
