@@ -1,2 +1,15 @@
 h2 = @list.name
 = link_to "delete", @list, :method => "delete"
+
+= form_for [@list, @point] do |f|
+  = f.text_area :content
+  = f.radio_button :weight, '1'
+  = f.radio_button :weight, '2'
+  = f.radio_button :weight, '3'
+  = f.hidden_field :pro, :value => true
+  = f.submit "Add Pro"
+
+- @list.points.ispro.each do |point|
+  li
+    = point.content
+    = link_to "delete", list_point_url(@list, point), :method => "delete", :id => "delete_point"
