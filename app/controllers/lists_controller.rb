@@ -24,6 +24,19 @@ class ListsController < ApplicationController
     @point = @list.points.new
   end
 
+  def update
+    @list = List.find(params[:id])
+    respond_to do |format|
+      if @list.update_attributes(params[:list])
+        format.html { redirect_to(@list, :notice => 'User was successfully updated.') }
+        format.json { respond_with_bip(@list) }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip(@list) }
+      end
+    end
+  end
+
   def destroy
     @list = List.find(params[:id])
     if @list.destroy

@@ -1,0 +1,6 @@
+- if point.valid? == true
+  = content_tag_for :li, point, :class => "weight-#{point.weight}" do
+    = best_in_place [@list,point], :weight, :type => :select, :inner_class => "weight-select", :data => {:point => point.weight}, :classes => "badge-#{point.pro}", :collection => [[1, "1"], [2, "2"], [3, "3"]] 
+    = best_in_place [@list, point], :content, :type => :input, :activator => "#edit-link-#{point.id}"
+    = link_to "edit", "javascript:void(0)", :id=> "edit-link-#{point.id}"
+    = link_to "delete", list_point_url(@list, point), :method => "delete", :id => "delete_point"

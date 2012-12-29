@@ -198,6 +198,6 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 3.2.3)
   slim-rails
-  spork (~> 0.9.0.rc)
+  spork (> 0.9.0.rc)
   terminal-notifier-guard
   uglifier (>= 1.0.3)

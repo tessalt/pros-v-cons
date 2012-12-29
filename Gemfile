@@ -30,7 +30,6 @@ group :development do
   gem 'annotate', '2.5.0'
   gem 'guard-rspec'
   gem 'terminal-notifier-guard'
-  gem 'spork', '~> 0.9.0.rc'
 end
 
 group :development, :test do
@@ -39,6 +38,7 @@ end
 
 group :test do 
   gem 'capybara'
+  gem "spork", "> 0.9.0.rc"  
 end
 
 # To use ActiveModel has_secure_password
