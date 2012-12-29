@@ -242,31 +242,90 @@ a {
   }
 }
 
-.point-weight {
-  display: inline-block;
-  padding: 4px 6px;
-  background: #FFF;
-  margin-left: 6px;
-  margin-right: 6px;
+.mover {
+  cursor: move;
+  background: rgba(255,255,255,0.5);
+  padding: 6px 8px;
+  img {
+    display: inline-block;  
+  }
+}
+
+.point-weight { 
+  padding: 6px 8px;
+  strong {
+    background: #FFF;
+    display: inline-block;
+    .best_in_place {
+      padding:4px;
+      cursor: pointer;
+    }
+  }
+}
+
+.point-content {
+  padding:6px;
+  line-height: 1.3em;
+  vertical-align: top;
+  .best_in_place {
+    padding-right: 15px;
+  }
 }
 
 .actions {
-  float: right;
-  margin-right: 14px;
-  margin-top: 12px;
-  a {
-    display: inline-block;
-    margin-left: 8px;
-  }
+  text-align: right;
+  display: block;
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
+
+.point-content {
+  display: table-row;
+}
+
+
 
 .one-point {
   margin-bottom: 1em;
   @extend %clearfix;
-  .mover {
-    cursor: move;
-    padding: 12px 8px 16px 8px;
-    display: inline-block;
-    background: rgba(255,255,255,0.5);
+  position: relative;
+  .best_in_place {
+    display: block;
+  }
+  span {
+    display: table-cell;
+    
+  }
+}
+
+.instruction {
+  display: none;
+  background: rgba(236, 185, 55, .3);
+  @extend %pseudo-content-before;
+  padding: 8px 16px;
+  &:before {
+    width: 47px;
+    height: 33px;
+    left: -52px;
+    top: -15px;
+  }
+}
+
+.edit-title {
+  position: absolute;
+  left: 55%;
+  &:before {
+    background: url('arrow-1.png');
+  }
+}
+
+.edit-point {
+  margin-left: 135px;
+  &:before {
+    background: url('arrow-2.png');
+    width: 82px;
+    height: 38px;
+    left: -92px;
   }
 }

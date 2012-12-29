@@ -1,7 +1,21 @@
 <% if @point.pro == true %>
   $("#pros").prepend("<%= escape_javascript(render @point) %>");
   $("textarea").val(" ");
+  $(".edit-title").fadeOut();
+  if ($.cookie("seen_point") !== "true") {
+    $("#pros").next(".edit-point").css('display', 'inline-block');
+    $.cookie("seen_point", "true");
+  } else {
+    $(".edit-point").fadeOut();
+  }
 <% else %>
   $("#cons").prepend("<%= escape_javascript(render @point) %>");
   $("textarea").val(" ");
+  $(".edit-title").fadeOut();
+  if ($.cookie("seen_point") !== "true") {
+    $("#cons").next(".edit-point").css('display', 'inline-block');
+    $.cookie("seen_point", "true");
+  } else {
+    $(".edit-point").fadeOut();
+  }
 <% end %>

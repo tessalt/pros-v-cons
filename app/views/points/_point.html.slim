@@ -1,10 +1,14 @@
 - if point.valid? == true
   = content_tag_for :li, point, :class => "weight-#{point.weight} one-point" do
-    span.mover
-      = image_tag('move-icon.png')
-    span.point-weight
-      = best_in_place [@list,point], :weight, :type => :select, :inner_class => "weight-select", :data => {:point => point.weight}, :classes => "badge-#{point.pro}", :collection => [[1, "1"], [2, "2"], [3, "3"]] 
-    = best_in_place [@list, point], :content, :type => :input, :activator => "#edit-link-#{point.id}"
-    span.actions
-      = link_to image_tag('edit-icon.png'), "javascript:void(0)", :id=> "edit-link-#{point.id}"
-      = link_to image_tag('close-icon.png'), list_point_url(@list, point), :method => "delete", :remote => true, :id => "delete_point"
+    .point-inner
+      span.mover
+        = image_tag('move-icon.png')
+      span.point-weight
+        strong
+          = best_in_place [@list,point], :weight, :type => :select, :inner_class => "weight-select", :data => {:point => point.weight}, :classes => "badge-#{point.pro}", :collection => [[1, "1"], [2, "2"], [3, "3"]] 
+      span.point-content
+        = best_in_place [@list, point], :content, :type => :input
+      span.actions
+        //= link_to image_tag('edit-icon.png'), "javascript:void(0)", :id=> "edit-link-#{point.id}"
+        = link_to image_tag('close-icon.png'), list_point_url(@list, point), :method => "delete", :remote => true, :id => "delete_point"
+    //= point.position

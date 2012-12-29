@@ -5,6 +5,9 @@
       = best_in_place @list, :name, :type => :input
       = link_to "delete", @list, :method => "delete"
 
+    .instruction.edit-title
+      | Click to edit
+
   .points
     .pro-col
       h3 Pros
@@ -12,7 +15,7 @@
       ul#pros[data-update-url="#{sort_list_points_url(@list)}"]
         - @list.points.ispro.each do |point|
           = render :partial => "points/point", :locals => { :point => point }
-
+      .instruction.edit-point Click to edit
     .con-col
       h3 Cons
       = render :partial => 'point_form', :locals => { :pro => false, :classy => "con", :submit_title => "Con" } 
@@ -20,4 +23,4 @@
       ul#cons[data-update-url="#{sort_list_points_url(@list)}"]
         - @list.points.iscon.each do |point|
           = render :partial => "points/point", :locals => { :point => point }
-
+      .instruction.edit-point Click to edit
