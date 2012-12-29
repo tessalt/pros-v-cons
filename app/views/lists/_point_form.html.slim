@@ -1,10 +1,15 @@
 = form_for [@list, @point], :remote => true do |f|
-  = f.text_area :content
-  = f.radio_button :weight, '1', :id => "#{classy}point_weight_1"
-  = f.label :weight, "1", :for => "#{classy}point_weight_1"
-  = f.radio_button :weight, '2', :id => "#{classy}point_weight_2"
-  = f.label :weight, "2", :for => "#{classy}point_weight_2" 
-  = f.radio_button :weight, '3', :id => "#{classy}point_weight_1"
-  = f.label :weight, "3", :for => "#{classy}point_weight_3"
-  = f.hidden_field :pro, :value => pro
-  = f.submit "Add #{submit_title}", :class => "btn-#{classy}"
+  = f.text_area :content, :rows => "5"
+  .button-group
+    span Importance
+    = f.radio_button :weight, '1', :id => "#{classy}point_weight_1"
+    = f.label :weight, "1", :for => "#{classy}point_weight_1", :class => "radio-label weight-1"
+
+    = f.radio_button :weight, '2', :id => "#{classy}point_weight_2"
+    = f.label :weight, "2", :for => "#{classy}point_weight_2" , :class => "radio-label weight-2"
+
+    = f.radio_button :weight, '3', :id => "#{classy}point_weight_3"
+    = f.label :weight, "3", :for => "#{classy}point_weight_3", :class => "radio-label weight-3"
+
+    = f.hidden_field :pro, :value => pro
+    = f.submit "Add #{submit_title}", :class => "btn-#{classy} btn"

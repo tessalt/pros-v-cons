@@ -7,8 +7,11 @@ html
     = csrf_meta_tags
   body
 
-    - flash.each do |key, msg|
-      div id=(key)
-        p= msg
+  = render :partial => "layouts/header"
 
+  - flash.each do |key, msg|
+    div id=(key)
+      p= msg
+
+  section#main-section.container
     = yield

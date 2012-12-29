@@ -1,0 +1,272 @@
+@import "compass/reset";
+@import "compass/css3";
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic);
+
+* {
+  @include box-sizing(border-box);
+}
+
+$pro-main: #16af90;
+$pro-accent: #15997e;
+$pro1: #d1f7ea;
+$con-main: #df4931;
+$con-accent: #cc432e;
+$con1: #fddcd7;
+
+%clearfix {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }  
+  &:after {
+    clear: both;
+  }
+}
+ 
+%inline-block {
+  display: inline-block;
+  vertical-align: top;  
+}
+ 
+%pseudo-content-after {
+  position: relative;
+  &:after {
+    content: " ";
+    position: absolute;
+    display: block;
+   }
+}
+ 
+%pseudo-content-before {
+  position: relative;
+  &:before {
+    content: " ";
+    position: absolute;
+    display: block;
+   }
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 87.5%;
+  background: url('tile.gif');
+  color: #363636;
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+header {
+  text-align: center;
+  padding: 0 0 20px 0;
+  font-family: 'Lato', sans-serif;
+}
+
+#page-header {
+  padding-top: 20px;
+  @include background-image(linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0)));
+}
+
+h1 {
+  font-size: 1.714285714em;
+  font-weight: 700;
+  small {
+    font-size: .583333333em;
+  }
+}
+
+h2 {
+  color: #696969;
+  font-size: 1.285714286em;  
+  margin-bottom: 1em;
+  a {
+    font-size: .777777778em;
+    text-decoration: underline;
+    display: inline-block;
+    padding-left: 10px;
+  }
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 1.142857143em;
+  cursor: pointer;
+  vertical-align: top;
+  margin-top: 0;
+  border: 1px solid #333;
+  background: #FFF;
+}
+
+
+.container {
+  width: 90%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.twitter-share {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.points {
+  padding-top: 20px;
+  @extend %clearfix;
+  h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.714285714em;
+    font-weight: 700;
+    padding-bottom: .3em;
+    margin-bottom: .6em;
+  }
+}
+
+.pro-col, .con-col {
+  width: 48.076923077%;
+  float: left;
+}
+
+.pro-col {
+  margin-right: 3.846153846%;
+  h3 {
+    color: $pro-main;
+    border-bottom: 4px solid $pro-accent;
+  }
+  .btn {
+    border-color: $pro-main;
+    color: $pro-accent;
+  }
+  textarea {
+    border: 1px solid #d5f1eb;
+  }
+  input:checked + .radio-label {
+    border-bottom-color: $pro-main;
+  }
+  .weight-1 {
+    background: $pro1;
+  }
+  .weight-2 {
+    background: darken($pro1, 15%);    
+  }
+  .weight-3 {
+    background: darken($pro1, 30%);
+  }
+  .radio-label {
+    border-color: transparent;
+    &.weight-1 {
+      border-bottom-color: $pro1;
+    }
+    &.weight-2 {
+      border-bottom-color: darken($pro1, 15%);
+    }
+    &.weight-3 {
+      border-bottom-color: darken($pro1, 30%);
+    }
+  }
+}
+
+.con-col {
+  h3 {
+    color: $con-main;
+    border-bottom: 4px solid $con-accent;
+  }
+  .btn {
+    border-color: $con-main;
+    color: $con-accent;
+  }
+  textarea {
+    border: 1px solid #f9deda;
+  }
+  input:checked + .radio-label {
+    border-bottom-color: $con-main;
+  }
+  .weight-1 {
+    background: $con1;
+  }
+  .weight-2 {
+    background: darken($con1, 10%);
+  }
+  .weight-3 {
+    background: darken($con1, 20%);
+  }
+  .radio-label {
+    border-color: transparent;
+    &.weight-1 {
+      border-bottom-color: $con1;
+    }
+    &.weight-2 {      
+      border-bottom-color: darken($con1, 15%);
+    }
+    &.weight-3 {
+      border-bottom-color: darken($con1, 25%);
+    }
+  }
+}
+
+.button-group {
+  text-align: right;
+  margin: 10px 0 30px 0;
+  span {
+    display: inline-block;
+    padding-top: 5px;
+    color: #969696;
+  }
+  .radio-label, .btn {
+    margin-left: 8px;
+  }
+}
+
+.radio-label {
+  @extend .btn;
+  color: #333!important;    
+  font-weight: 700;
+  border-bottom: 2px solid #333;
+}
+
+.new_point {
+  textarea {
+    width: 100%;
+  }
+  input[type="radio"]  {
+    position:absolute;
+    clip: rect(0,0,0,0);
+    clip: rect(0 0 0 0);
+  }
+}
+
+.point-weight {
+  display: inline-block;
+  padding: 4px 6px;
+  background: #FFF;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.actions {
+  float: right;
+  margin-right: 14px;
+  margin-top: 12px;
+  a {
+    display: inline-block;
+    margin-left: 8px;
+  }
+}
+
+.one-point {
+  margin-bottom: 1em;
+  @extend %clearfix;
+  .mover {
+    cursor: move;
+    padding: 12px 8px 16px 8px;
+    display: inline-block;
+    background: rgba(255,255,255,0.5);
+  }
+}
