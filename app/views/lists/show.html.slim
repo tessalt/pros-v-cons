@@ -1,4 +1,5 @@
 .container
+  = render :partial => "shared/twitter_share", :locals => { :list => @list}
   header#list-header
     h2 
       | <strong>Debate: </strong>
@@ -7,6 +8,7 @@
 
     .instruction.edit-title
       | Click to edit
+
 
   .points
     .pro-col
