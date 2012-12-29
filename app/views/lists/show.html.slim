@@ -1,6 +1,8 @@
 h2 = best_in_place @list, :name, :type => :input
 = link_to "delete", @list, :method => "delete"
 
+= render :partial => 'shared/twitter_share', :locals => {:list => @list }
+
 .points
   = render :partial => 'point_form', :locals => { :pro => true, :classy => "success", :submit_title => "Pro" } 
 
@@ -10,7 +12,7 @@ h2 = best_in_place @list, :name, :type => :input
 
   = render :partial => 'point_form', :locals => { :pro => false, :classy => "error", :submit_title => "Con" } 
 
-  ul#cons 
+  ul#cons[data-update-url="#{sort_list_points_url(@list)}"]
     - @list.points.iscon.each do |point|
       = render :partial => "points/point", :locals => { :point => point }
 
