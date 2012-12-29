@@ -32,10 +32,13 @@ class PointsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy 
     @point = @list.points.find(params[:id])
     @point.destroy
-    redirect_to list_url(@list) 
+    respond_to do |format|
+      format.html { redirect_to list_url(@list) }
+      format.js
+    end
   end
 
   private
