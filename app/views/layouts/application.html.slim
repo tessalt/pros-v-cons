@@ -3,15 +3,17 @@ html
   head
     title ProsVCons
     = stylesheet_link_tag    "application", :media => "all"
+    = stylesheet_link_tag    "print", :media => "print"
     = javascript_include_tag "application"
     = csrf_meta_tags
   body
 
   = render :partial => "layouts/header"
 
-  - flash.each do |key, msg|
-    div id=(key)
-      p= msg
+  .container
+    - flash.each do |key, msg|
+      .flash id=(key)
+        p= msg
 
   section#main-section.container
     = yield

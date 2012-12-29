@@ -9,6 +9,4 @@
       span.point-content
         = best_in_place [@list, point], :content, :type => :input
       span.actions
-        //= link_to image_tag('edit-icon.png'), "javascript:void(0)", :id=> "edit-link-#{point.id}"
         = link_to image_tag('close-icon.png'), list_point_url(@list, point), :method => "delete", :remote => true, :id => "delete_point"
-    //= point.position

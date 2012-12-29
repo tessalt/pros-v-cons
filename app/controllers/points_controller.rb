@@ -2,6 +2,11 @@ class PointsController < ApplicationController
 
   before_filter :find_list
 
+  def total_weight
+    @point = @list.points.all
+    sum(@point.weight)
+  end
+
   def create
     @point = @list.points.new(params[:point])
     respond_to do |format|
@@ -9,7 +14,7 @@ class PointsController < ApplicationController
         format.html { redirect_to list_url(@list) }
         format.js
       else 
-        flash[:notice] = "Failed"
+        flash[:error] = "Failed to create point"
         format.html { redirect_to list_url(@list) }
         format.js
       end
@@ -23,7 +28,7 @@ class PointsController < ApplicationController
     @point = @list.points.find(params[:id])
     respond_to do |format|
       if @point.update_attributes(params[:point])
-        format.html { redirect_to(list_url(@list), :notice => 'User was successfully updated.') }
+        format.html { redirect_to(list_url(@list), :notice => 'Point was successfully updated.') }
         format.json { respond_with_bip(@point)}
       else
         format.html { render :action => "edit" }

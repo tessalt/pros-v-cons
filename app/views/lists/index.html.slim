@@ -1,8 +1,8 @@
-h2 Create a new list
+.lists
+  h2 Create a new list
+  = form_for @list do |f|
+    = f.text_field :name, :placeholder => "Name your Pros vs. Cons list"
+    = f.submit "Create List"
 
-= form_for @list do |f|
-  = f.text_field :name, :placeholder => "Name your Pros vs. Cons list"
-  = f.submit "Create List"
-
-- List.all.each do |list|
-  = link_to list.name, list
+  / - List.all.each do |list|
+  /   = link_to list.name, list

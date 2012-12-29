@@ -1,0 +1,11 @@
+img, #page-header, .mover, form {
+  display: none!important;
+}
+
+header {
+  margin-top: 2em;
+}
+
+* {
+  background: none!important;
+}

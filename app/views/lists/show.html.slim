@@ -4,11 +4,12 @@
     h2 
       | <strong>Debate: </strong>
       = best_in_place @list, :name, :type => :input
-      = link_to "delete", @list, :method => "delete"
+      .list-actions
+        = link_to "print", 'javascript:void(0)', :onclick => "window.print();return false"
+        = link_to "delete", @list, :method => "delete", :confirm =>"Are you sure you want to delete this list?"
 
     .instruction.edit-title
       | Click to edit
-
 
   .points
     .pro-col
