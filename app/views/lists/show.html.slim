@@ -3,10 +3,12 @@ h2 = best_in_place @list, :name, :type => :input
 
 = render :partial => 'point_form', :locals => { :pro => true, :classy => "success", :submit_title => "Pro" } 
 
-- @list.points.ispro.each do |point|
-  = render :partial => "points/point", :locals => { :point => point }
+ul#pros
+  - @list.points.ispro.each do |point|
+    = render :partial => "points/point", :locals => { :point => point }
 
 = render :partial => 'point_form', :locals => { :pro => false, :classy => "error", :submit_title => "Con" } 
 
-- @list.points.iscon.each do |point|
-  = render :partial => "points/point", :locals => { :point => point }
+ul#cons
+  - @list.points.iscon.each do |point|
+    = render :partial => "points/point", :locals => { :point => point }

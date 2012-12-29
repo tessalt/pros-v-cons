@@ -1,0 +1,7 @@
+<% if @point.pro == true %>
+  $("#pros").prepend("<%= escape_javascript(render @point) %>");
+  $("textarea").val(" ");
+<% else %>
+  $("#cons").prepend("<%= escape_javascript(render @point) %>");
+  $("textarea").val(" ");
+<% end %>

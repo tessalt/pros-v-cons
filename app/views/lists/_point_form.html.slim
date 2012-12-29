@@ -1,4 +1,4 @@
-= form_for [@list, @point] do |f|
+= form_for [@list, @point], :remote => true do |f|
   = f.text_area :content
   = f.radio_button :weight, '1', :id => "#{classy}point_weight_1"
   = f.label :weight, "1", :for => "#{classy}point_weight_1"
