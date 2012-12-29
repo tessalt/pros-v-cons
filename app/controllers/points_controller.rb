@@ -41,6 +41,13 @@ class PointsController < ApplicationController
     end
   end
 
+  def sort
+    params[:point].each_with_index do |id, index|
+      Point.update_all({position: index+1}, {id:id})
+    end
+    render nothing: true
+  end
+
   private
 
   def find_list

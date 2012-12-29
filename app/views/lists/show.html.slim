@@ -1,14 +1,16 @@
 h2 = best_in_place @list, :name, :type => :input
 = link_to "delete", @list, :method => "delete"
 
-= render :partial => 'point_form', :locals => { :pro => true, :classy => "success", :submit_title => "Pro" } 
+.points
+  = render :partial => 'point_form', :locals => { :pro => true, :classy => "success", :submit_title => "Pro" } 
 
-ul#pros
-  - @list.points.ispro.each do |point|
-    = render :partial => "points/point", :locals => { :point => point }
+  ul#pros[data-update-url="#{sort_list_points_url(@list)}"]
+    - @list.points.ispro.each do |point|
+      = render :partial => "points/point", :locals => { :point => point }
 
-= render :partial => 'point_form', :locals => { :pro => false, :classy => "error", :submit_title => "Con" } 
+  = render :partial => 'point_form', :locals => { :pro => false, :classy => "error", :submit_title => "Con" } 
 
-ul#cons
-  - @list.points.iscon.each do |point|
-    = render :partial => "points/point", :locals => { :point => point }
+  ul#cons 
+    - @list.points.iscon.each do |point|
+      = render :partial => "points/point", :locals => { :point => point }
+

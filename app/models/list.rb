@@ -13,6 +13,6 @@ class List < ActiveRecord::Base
 
   validates :name, :presence => true
 
-  has_many :points, dependent: :destroy
+  has_many :points, dependent: :destroy, order: 'position asc'
   
 end

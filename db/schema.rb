@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121225202804) do
+ActiveRecord::Schema.define(:version => 20121229020340) do
 
   create_table "lists", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20121225202804) do
     t.datetime "updated_at",                :null => false
     t.integer  "list_id"
     t.integer  "weight",     :default => 1
+    t.integer  "position"
   end
 
   add_index "points", ["list_id"], :name => "index_points_on_list_id"

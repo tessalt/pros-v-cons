@@ -1,5 +1,5 @@
 class Point < ActiveRecord::Base
-  attr_accessible :content, :list_id, :position, :pro, :weight
+  attr_accessible :content, :list_id, :pro, :weight
   belongs_to :list
 
   scope :ispro, where(:pro => true)

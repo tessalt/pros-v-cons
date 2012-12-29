@@ -2,7 +2,11 @@ ProsVCons::Application.routes.draw do
   root :to => 'lists#index'
 
   resources :lists do
-    resources :points 
+    resources :points do
+      collection do
+        post 'sort'
+      end
+    end
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
