@@ -15,5 +15,5 @@ $ ->
 
   $(".best_in_place").bind "ajax:success", ->
     weight = $(this).text()
-    $(this).parent().parent().parent().parent().addClass "weight-" + weight
+    $(this).parent().parent().parent().parent().removeClass("weight-1, weight-2, weight-3").addClass "weight-" + weight
  
