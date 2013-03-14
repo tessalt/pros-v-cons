@@ -1,2 +1,2 @@
 # Pros vs. Cons App
-I'm learning rails yo
+I'm learning rails yo.
