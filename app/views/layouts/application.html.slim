@@ -1,10 +1,12 @@
 doctype
 html
   head
-    title 
+    title
       = yield(:title1)
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
+    meta name="description" content="Create a simple pros vs. cons list online for free"
+    meta name="keywords" content="pros vs cons, pro vs con, pro v con, pros v cons, free pro vs cons, comparison, online, free"
     = csrf_meta_tags
   body
 
