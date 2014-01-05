@@ -2,7 +2,7 @@
 .container
   = render :partial => "shared/twitter_share", :locals => { :list => @list}
   header#list-header
-    h2 
+    h2
       | <strong>Debate: </strong>
       = best_in_place @list, :name, :type => :input
       .list-actions
@@ -15,16 +15,20 @@
   .points
     .pro-col
       h3 Pros
-      = render :partial => 'point_form', :locals => { :pro => true, :classy => "pro", :submit_title => "Pro" } 
+      = render :partial => 'point_form', :locals => { :pro => true, :classy => "pro", :submit_title => "Pro" }
       ul#pros[data-update-url="#{sort_list_points_url(@list)}"]
         - @list.points.ispro.each do |point|
           = render :partial => "points/point", :locals => { :point => point }
       .instruction.edit-point Click to edit
     .con-col
       h3 Cons
-      = render :partial => 'point_form', :locals => { :pro => false, :classy => "con", :submit_title => "Con" } 
+      = render :partial => 'point_form', :locals => { :pro => false, :classy => "con", :submit_title => "Con" }
 
       ul#cons[data-update-url="#{sort_list_points_url(@list)}"]
         - @list.points.iscon.each do |point|
           = render :partial => "points/point", :locals => { :point => point }
       .instruction.edit-point Click to edit
+
+
+.notice
+  p Note: your list may be deleted after one or more months of inactivity.

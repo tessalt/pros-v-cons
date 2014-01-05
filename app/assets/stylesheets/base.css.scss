@@ -17,17 +17,17 @@ $con1: #fddcd7;
   &:before, &:after {
     content: " ";
     display: table;
-  }  
+  }
   &:after {
     clear: both;
   }
 }
- 
+
 %inline-block {
   display: inline-block;
-  vertical-align: top;  
+  vertical-align: top;
 }
- 
+
 %pseudo-content-after {
   position: relative;
   &:after {
@@ -36,7 +36,7 @@ $con1: #fddcd7;
     display: block;
    }
 }
- 
+
 %pseudo-content-before {
   position: relative;
   &:before {
@@ -83,7 +83,7 @@ h1 {
 
 h2 {
   color: #696969;
-  font-size: 1.285714286em;  
+  font-size: 1.285714286em;
   margin-bottom: 1em;
   a {
     font-size: .777777778em;
@@ -146,7 +146,7 @@ a {
     padding-bottom: .3em;
     margin-bottom: .6em;
   }
-  
+
 }
 
 .list-actions {
@@ -181,7 +181,7 @@ a {
     background: $pro1;
   }
   .weight-2 {
-    background: darken($pro1, 15%);    
+    background: darken($pro1, 15%);
   }
   .weight-3 {
     background: darken($pro1, 30%);
@@ -232,7 +232,7 @@ a {
     &.weight-1 {
       border-bottom-color: $con1;
     }
-    &.weight-2 {      
+    &.weight-2 {
       border-bottom-color: darken($con1, 15%);
     }
     &.weight-3 {
@@ -256,7 +256,7 @@ a {
 
 .radio-label {
   @extend .btn;
-  color: #333!important;    
+  color: #333!important;
   font-weight: 700;
   border-bottom: 2px solid #333;
 }
@@ -283,11 +283,11 @@ a {
   background: rgba(255,255,255,0.5);
   padding: 6px 8px;
   img {
-    display: inline-block;  
+    display: inline-block;
   }
 }
 
-.point-weight { 
+.point-weight {
   padding: 6px 8px;
   strong {
     background: #FFF;
@@ -328,14 +328,14 @@ a {
     display: block;
   }
   span {
-    display: table-cell;   
+    display: table-cell;
   }
   .best_in_place {
     input {
       padding: 0 2px 4px 2px;
       width: 350px;
       display: block;
-      margin: 1px 0 0 -3px;       
+      margin: 1px 0 0 -3px;
     }
   }
 }
@@ -423,4 +423,11 @@ a {
 #notice {
   border: 2px solid blue;
   color: blue;
+}
+
+.notice {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #444;
 }
